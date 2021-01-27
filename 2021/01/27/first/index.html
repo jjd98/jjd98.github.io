@@ -6,15 +6,15 @@
   
   <title>Python编程Tips | 金极栋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="函数可变参数在参数名前面的*表示args是一个可变参数def add(*args):    total &#x3D; 0    for val in args:        total +&#x3D; val    return total  模块定义可执行代码放在*if name &#x3D;&#x3D; ‘main‘**:条件语句下，导入该模块时，由于模块名称不是main***，因此不会执行该条件成立时的代码只有直接运行该模块时，">
+  <meta name="description" content="函数可变参数在参数名前面的*表示args是一个可变参数 12345def add(*args):    total &#x3D; 0    for val in args:        total +&#x3D; val    return total  模块定义可执行代码放在if __name__ &#x3D;&#x3D; &#39;__main__&#39;:条件语句下，导入该模块时，由于模块名称不是__main__，因此不会执行">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python编程Tips">
 <meta property="og:url" content="http://jjd98.com/2021/01/27/first/index.html">
 <meta property="og:site_name" content="金极栋的博客">
-<meta property="og:description" content="函数可变参数在参数名前面的*表示args是一个可变参数def add(*args):    total &#x3D; 0    for val in args:        total +&#x3D; val    return total  模块定义可执行代码放在*if name &#x3D;&#x3D; ‘main‘**:条件语句下，导入该模块时，由于模块名称不是main***，因此不会执行该条件成立时的代码只有直接运行该模块时，">
+<meta property="og:description" content="函数可变参数在参数名前面的*表示args是一个可变参数 12345def add(*args):    total &#x3D; 0    for val in args:        total +&#x3D; val    return total  模块定义可执行代码放在if __name__ &#x3D;&#x3D; &#39;__main__&#39;:条件语句下，导入该模块时，由于模块名称不是__main__，因此不会执行">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-01-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-27T02:31:36.932Z">
+<meta property="article:modified_time" content="2021-01-27T02:55:25.076Z">
 <meta property="article:author" content="⁯金极栋">
 <meta name="twitter:card" content="summary">
   
@@ -103,20 +103,24 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="函数可变参数"><a href="#函数可变参数" class="headerlink" title="函数可变参数"></a>函数可变参数</h2><p>在参数名前面的*表示args是一个可变参数<br>def add(*args):<br>    total = 0<br>    for val in args:<br>        total += val<br>    return total</p>
+        <h2 id="函数可变参数"><a href="#函数可变参数" class="headerlink" title="函数可变参数"></a>函数可变参数</h2><p>在参数名前面的*表示args是一个可变参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">*args</span>):</span></span><br><span class="line">    total = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> val <span class="keyword">in</span> args:</span><br><span class="line">        total += val</span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="模块定义"><a href="#模块定义" class="headerlink" title="模块定义"></a>模块定义</h2><p>可执行代码放在*<strong>if <strong>name</strong> == ‘<strong>main</strong>‘**<em>:条件语句下，导入该模块时，由于模块名称不是</em></strong><strong>main</strong>***，因此不会执行该条件成立时的代码<br>只有直接运行该模块时，该条件下代码才会被执行<br>一般书写格式：<br>    def main():<br>        # Todo: Add your code here<br>        pass</p>
-<pre><code>if __name__ == &#39;__main__&#39;:
-    main()</code></pre>
-<h3 id="Law-of-Demeter"><a href="#Law-of-Demeter" class="headerlink" title="Law of ^Demeter"></a>Law of <a href="LoD">^Demeter</a></h3><h2 id="a-b-Method-违反了此定律，而a-Method-不违反此定律。简单来说，只使用一个-算符。"><a href="#a-b-Method-违反了此定律，而a-Method-不违反此定律。简单来说，只使用一个-算符。" class="headerlink" title="a.b.Method()违反了此定律，而a.Method()不违反此定律。简单来说，只使用一个.算符。"></a><del>a.b.Method()</del>违反了此定律，而<u>a.Method()</u>不违反此定律。简单来说，只使用一个.算符。</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>‘s1 = r’&#39;hello, world!&#39;‘’，r消除‘&#39;的转义符功能</p>
-<p>‘’’python<br>s1 = ‘hello ‘ * 3<br>print(s1) # hello hello hello<br>s2 = ‘world’<br>s1 += s2<br>print(s1) # hello hello hello world<br>print(‘ll’ in s1) # True<br>print(‘good’ in s1) # False<br>str2 = ‘abc123456’</p>
-<h1 id="从字符串中取出指定位置的字符-下标运算"><a href="#从字符串中取出指定位置的字符-下标运算" class="headerlink" title="从字符串中取出指定位置的字符(下标运算)"></a>从字符串中取出指定位置的字符(下标运算)</h1><p>print(str2[2]) # c</p>
-<h1 id="字符串切片-从指定的开始索引到指定的结束索引"><a href="#字符串切片-从指定的开始索引到指定的结束索引" class="headerlink" title="字符串切片(从指定的开始索引到指定的结束索引)"></a>字符串切片(从指定的开始索引到指定的结束索引)</h1><p>print(str2[2:5]) # c12<br>print(str2[2:]) # c123456<br>print(str2[2::2]) # c246<br>print(str2[::2]) # ac246<br>print(str2[::-1]) # 654321cba<br>print(str2[-3:-1]) # 45<br>‘’’</p>
+<h2 id="模块定义"><a href="#模块定义" class="headerlink" title="模块定义"></a>模块定义</h2><p>可执行代码放在<code>if __name__ == &#39;__main__&#39;</code>:条件语句下，导入该模块时，由于模块名称不是<code>__main__</code>，因此不会执行该条件成立时的代码<br>只有直接运行该模块时，该条件下代码才会被执行<br>一般书写格式：  </p>
+<pre><code>def main():
+    # Todo: Add your code here
+    pass
 
+if __name__ == &#39;__main__&#39;:
+    main()</code></pre>
+<h3 id="Law-of-Demeter-LoD"><a href="#Law-of-Demeter-LoD" class="headerlink" title="Law of Demeter (LoD)"></a>Law of <a href="%E5%B8%8C%E8%85%8A%E7%A5%9E%E8%AF%9D%E4%B8%AD%E5%AD%A4%E7%8B%AC%E7%9A%84%E5%86%9C%E4%B8%9A%E5%A5%B3%E7%A5%9E">Demeter</a> (LoD)</h3><p><del>a.b.Method()</del>违反了此定律，而<u>a.Method()</u>不违反此定律。简单来说，只使用一个.算符。</p>
+<hr>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p><code>s1 = r&#39;\&#39;hello, world!\&#39;&#39;</code>，r消除‘&#39;的转义符功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="string">&#x27;hello &#x27;</span> * <span class="number">3</span></span><br><span class="line">print(s1) <span class="comment"># hello hello hello </span></span><br><span class="line">s2 = <span class="string">&#x27;world&#x27;</span></span><br><span class="line">s1 += s2</span><br><span class="line">print(s1) <span class="comment"># hello hello hello world</span></span><br><span class="line">print(<span class="string">&#x27;ll&#x27;</span> <span class="keyword">in</span> s1) <span class="comment"># True</span></span><br><span class="line">print(<span class="string">&#x27;good&#x27;</span> <span class="keyword">in</span> s1) <span class="comment"># False</span></span><br><span class="line">str2 = <span class="string">&#x27;abc123456&#x27;</span></span><br><span class="line"><span class="comment"># 从字符串中取出指定位置的字符(下标运算)</span></span><br><span class="line">print(str2[<span class="number">2</span>]) <span class="comment"># c</span></span><br><span class="line"><span class="comment"># 字符串切片(从指定的开始索引到指定的结束索引)</span></span><br><span class="line">print(str2[<span class="number">2</span>:<span class="number">5</span>]) <span class="comment"># c12</span></span><br><span class="line">print(str2[<span class="number">2</span>:]) <span class="comment"># c123456</span></span><br><span class="line">print(str2[<span class="number">2</span>::<span class="number">2</span>]) <span class="comment"># c246</span></span><br><span class="line">print(str2[::<span class="number">2</span>]) <span class="comment"># ac246</span></span><br><span class="line">print(str2[::-<span class="number">1</span>]) <span class="comment"># 654321cba</span></span><br><span class="line">print(str2[-<span class="number">3</span>:-<span class="number">1</span>]) <span class="comment"># 45</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jjd98.com/2021/01/27/first/" data-id="ckketf37g0000lsvu608453zc" data-title="Python编程Tips" class="article-share-link">Teilen</a>
+      <a data-url="http://jjd98.com/2021/01/27/first/" data-id="ckketu0rs0001wwvu436a4378" data-title="Python编程Tips" class="article-share-link">Teilen</a>
       
       
       
